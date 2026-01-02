@@ -5,25 +5,69 @@
     <title>Cupid's Challenge 💘</title>
     <style>
         body {
-            background-color: #fde2e4; /* soft pink background */
+            background: linear-gradient(135deg, #fde2e4, #ffc9de);
+            font-family: 'Arial', sans-serif;
             text-align: center;
-            font-family: Arial, sans-serif;
             padding: 50px;
         }
+
         h1 {
             font-size: 3em;
             color: #d6336c;
+            text-shadow: 2px 2px #fff;
         }
+
         p {
             font-size: 1.2em;
             color: #333;
+        }
+
+        a {
+            text-decoration: none;
+            color: #d6336c;
+            font-weight: bold;
+        }
+
+        a:hover {
+            color: #a50e48;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        #clue {
+            font-size: 1em;
+            color: #ff4081;
+            margin-top: 20px;
         }
     </style>
 </head>
 <body>
     <h1>💘 Welcome to Cupid's Challenge 💘</h1>
-    <p>Cupid has hidden a secret code somewhere on this website.🏹</p>
-    <p>Maybe the URL isnt what it seems. 🏹</p>
-</body>
+    <p>Cupid has hidden a secret code somewhere on this website. 🏹</p>
+    <p>Maybe the URL isn't what it seems…</p>
 
+    <p>Explore the site carefully. Some paths are hidden. 🔍</p>
+
+    <p><a href="hint.html">Click here for a hint</a></p>
+
+    <!-- Hidden JavaScript hint for advanced players -->
+    <div id="clue" class="hidden">Pssst… check out `/secret/` 😉</div>
+
+    <script>
+        // Reveal hidden hint after 10 seconds
+        setTimeout(() => {
+            const clue = document.getElementById('clue');
+            clue.classList.remove('hidden');
+        }, 10000);
+
+        // Simple Easter egg: click the heart emoji to reveal console hint
+        document.body.addEventListener('click', (e) => {
+            if(e.target.textContent.includes('💘')) {
+                console.log("Tip: The secret folder might be in a place Cupid wouldn't expect...");
+            }
+        });
+    </script>
+</body>
 </html>
